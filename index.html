@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>
+      El riesgo en los procesos de auditoría de sistemas y la automatización de
+      la auditoría - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png" />
+    <link
+      rel="apple-touch-icon"
+      href="https://hackmd.io/apple-touch-icon.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"
+      integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css"
+      integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css"
+      integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css"
+      integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU="
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);
+      .hljs {
+        display: block;
+        background: #fff;
+        padding: 0.5em;
+        color: #333;
+        overflow-x: auto;
+      }
+      .hljs-comment,
+      .hljs-meta {
+        color: #969896;
+      }
+      .hljs-emphasis,
+      .hljs-quote,
+      .hljs-string,
+      .hljs-strong,
+      .hljs-template-variable,
+      .hljs-variable {
+        color: #df5000;
+      }
+      .hljs-keyword,
+      .hljs-selector-tag,
+      .hljs-type {
+        color: #a71d5d;
+      }
+      .hljs-attribute,
+      .hljs-bullet,
+      .hljs-literal,
+      .hljs-number,
+      .hljs-symbol {
+        color: #0086b3;
+      }
+      .hljs-built_in,
+      .hljs-builtin-name {
+        color: #005cc5;
+      }
+      .hljs-name,
+      .hljs-section {
+        color: #63a35c;
+      }
+      .hljs-tag {
+        color: #333;
+      }
+      .hljs-attr,
+      .hljs-selector-attr,
+      .hljs-selector-class,
+      .hljs-selector-id,
+      .hljs-selector-pseudo,
+      .hljs-title {
+        color: #795da3;
+      }
+      .hljs-addition {
+        color: #55a532;
+        background-color: #eaffea;
+      }
+      .hljs-deletion {
+        color: #bd2c00;
+        background-color: #ffecec;
+      }
+      .hljs-link {
+        text-decoration: underline;
+      }
+      .markdown-body {
+        font-size: 16px;
+        line-height: 1.5;
+        word-wrap: break-word;
+      }
+      .markdown-body:after,
+      .markdown-body:before {
+        display: table;
+        content: "";
+      }
+      .markdown-body:after {
+        clear: both;
+      }
+      .markdown-body > :first-child {
+        margin-top: 0 !important;
+      }
+      .markdown-body > :last-child {
+        margin-bottom: 0 !important;
+      }
+      .markdown-body a:not([href]) {
+        color: inherit;
+        text-decoration: none;
+      }
+      .markdown-body .absent {
+        color: #c00;
+      }
+      .markdown-body .anchor {
+        float: left;
+        padding-right: 4px;
+        margin-left: -20px;
+        line-height: 1;
+      }
+      .markdown-body .anchor:focus {
+        outline: none;
+      }
+      .markdown-body blockquote,
+      .markdown-body dl,
+      .markdown-body ol,
+      .markdown-body p,
+      .markdown-body pre,
+      .markdown-body table,
+      .markdown-body ul {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      .markdown-body hr {
+        height: 0.25em;
+        padding: 0;
+        margin: 24px 0;
+        background-color: #e7e7e7;
+        border: 0;
+      }
+      .markdown-body blockquote {
+        font-size: 16px;
+        padding: 0 1em;
+        color: #777;
+        border-left: 0.25em solid #ddd;
+      }
+      .markdown-body blockquote > :first-child {
+        margin-top: 0;
+      }
+      .markdown-body blockquote > :last-child {
+        margin-bottom: 0;
+      }
+      .markdown-body kbd,
+      .popover kbd {
+        display: inline-block;
+        padding: 3px 5px;
+        font-size: 11px;
+        line-height: 10px;
+        color: #555;
+        vertical-align: middle;
+        background-color: #fcfcfc;
+        border: 1px solid #ccc;
+        border-bottom-color: #bbb;
+        border-radius: 3px;
+        box-shadow: inset 0 -1px 0 #bbb;
+      }
+      .markdown-body .loweralpha {
+        list-style-type: lower-alpha;
+      }
+      .markdown-body h1,
+      .markdown-body h2,
+      .markdown-body h3,
+      .markdown-body h4,
+      .markdown-body h5,
+      .markdown-body h6 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+      .markdown-body h1 .octicon-link,
+      .markdown-body h2 .octicon-link,
+      .markdown-body h3 .octicon-link,
+      .markdown-body h4 .octicon-link,
+      .markdown-body h5 .octicon-link,
+      .markdown-body h6 .octicon-link {
+        color: #000;
+        vertical-align: middle;
+        visibility: hidden;
+      }
+      .markdown-body h1:hover .anchor,
+      .markdown-body h2:hover .anchor,
+      .markdown-body h3:hover .anchor,
+      .markdown-body h4:hover .anchor,
+      .markdown-body h5:hover .anchor,
+      .markdown-body h6:hover .anchor {
+        text-decoration: none;
+      }
+      .markdown-body h1:hover .anchor .octicon-link,
+      .markdown-body h2:hover .anchor .octicon-link,
+      .markdown-body h3:hover .anchor .octicon-link,
+      .markdown-body h4:hover .anchor .octicon-link,
+      .markdown-body h5:hover .anchor .octicon-link,
+      .markdown-body h6:hover .anchor .octicon-link {
+        visibility: visible;
+      }
+      .markdown-body h1 code,
+      .markdown-body h1 tt,
+      .markdown-body h2 code,
+      .markdown-body h2 tt,
+      .markdown-body h3 code,
+      .markdown-body h3 tt,
+      .markdown-body h4 code,
+      .markdown-body h4 tt,
+      .markdown-body h5 code,
+      .markdown-body h5 tt,
+      .markdown-body h6 code,
+      .markdown-body h6 tt {
+        font-size: inherit;
+      }
+      .markdown-body h1 {
+        font-size: 2em;
+      }
+      .markdown-body h1,
+      .markdown-body h2 {
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid #eee;
+      }
+      .markdown-body h2 {
+        font-size: 1.5em;
+      }
+      .markdown-body h3 {
+        font-size: 1.25em;
+      }
+      .markdown-body h4 {
+        font-size: 1em;
+      }
+      .markdown-body h5 {
+        font-size: 0.875em;
+      }
+      .markdown-body h6 {
+        font-size: 0.85em;
+        color: #777;
+      }
+      .markdown-body ol,
+      .markdown-body ul {
+        padding-left: 2em;
+      }
+      .markdown-body ol.no-list,
+      .markdown-body ul.no-list {
+        padding: 0;
+        list-style-type: none;
+      }
+      .markdown-body ol ol,
+      .markdown-body ol ul,
+      .markdown-body ul ol,
+      .markdown-body ul ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .markdown-body li > p {
+        margin-top: 16px;
+      }
+      .markdown-body li + li {
+        padding-top: 0.25em;
+      }
+      .markdown-body dl {
+        padding: 0;
+      }
+      .markdown-body dl dt {
+        padding: 0;
+        margin-top: 16px;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: 700;
+      }
+      .markdown-body dl dd {
+        padding: 0 16px;
+        margin-bottom: 16px;
+      }
+      .markdown-body table {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        word-break: normal;
+        word-break: keep-all;
+      }
+      .markdown-body table th {
+        font-weight: 700;
+      }
+      .markdown-body table td,
+      .markdown-body table th {
+        padding: 6px 13px;
+        border: 1px solid #ddd;
+      }
+      .markdown-body table tr {
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+      }
+      .markdown-body table tr:nth-child(2n) {
+        background-color: #f8f8f8;
+      }
+      .markdown-body img {
+        max-width: 100%;
+        box-sizing: content-box;
+        background-color: #fff;
+      }
+      .markdown-body img[align="right"] {
+        padding-left: 20px;
+      }
+      .markdown-body img[align="left"] {
+        padding-right: 20px;
+      }
+      .markdown-body .emoji {
+        max-width: none;
+        vertical-align: text-top;
+        background-color: transparent;
+      }
+      .markdown-body span.frame {
+        display: block;
+        overflow: hidden;
+      }
+      .markdown-body span.frame > span {
+        display: block;
+        float: left;
+        width: auto;
+        padding: 7px;
+        margin: 13px 0 0;
+        overflow: hidden;
+        border: 1px solid #ddd;
+      }
+      .markdown-body span.frame span img {
+        display: block;
+        float: left;
+      }
+      .markdown-body span.frame span span {
+        display: block;
+        padding: 5px 0 0;
+        clear: both;
+        color: #333;
+      }
+      .markdown-body span.align-center {
+        display: block;
+        overflow: hidden;
+        clear: both;
+      }
+      .markdown-body span.align-center > span {
+        display: block;
+        margin: 13px auto 0;
+        overflow: hidden;
+        text-align: center;
+      }
+      .markdown-body span.align-center span img {
+        margin: 0 auto;
+        text-align: center;
+      }
+      .markdown-body span.align-right {
+        display: block;
+        overflow: hidden;
+        clear: both;
+      }
+      .markdown-body span.align-right > span {
+        display: block;
+        margin: 13px 0 0;
+        overflow: hidden;
+        text-align: right;
+      }
+      .markdown-body span.align-right span img {
+        margin: 0;
+        text-align: right;
+      }
+      .markdown-body span.float-left {
+        display: block;
+        float: left;
+        margin-right: 13px;
+        overflow: hidden;
+      }
+      .markdown-body span.float-left span {
+        margin: 13px 0 0;
+      }
+      .markdown-body span.float-right {
+        display: block;
+        float: right;
+        margin-left: 13px;
+        overflow: hidden;
+      }
+      .markdown-body span.float-right > span {
+        display: block;
+        margin: 13px auto 0;
+        overflow: hidden;
+        text-align: right;
+      }
+      .markdown-body code,
+      .markdown-body tt {
+        padding: 0;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        margin: 0;
+        font-size: 85%;
+        background-color: rgba(0, 0, 0, 0.04);
+        border-radius: 3px;
+      }
+      .markdown-body code:after,
+      .markdown-body code:before,
+      .markdown-body tt:after,
+      .markdown-body tt:before {
+        letter-spacing: -0.2em;
+        content: "\00a0";
+      }
+      .markdown-body code br,
+      .markdown-body tt br {
+        display: none;
+      }
+      .markdown-body del code {
+        text-decoration: inherit;
+      }
+      .markdown-body pre {
+        word-wrap: normal;
+      }
+      .markdown-body pre > code {
+        padding: 0;
+        margin: 0;
+        font-size: 100%;
+        word-break: normal;
+        white-space: pre;
+        background: transparent;
+        border: 0;
+      }
+      .markdown-body .highlight {
+        margin-bottom: 16px;
+      }
+      .markdown-body .highlight pre {
+        margin-bottom: 0;
+        word-break: normal;
+      }
+      .markdown-body .highlight pre,
+      .markdown-body pre {
+        padding: 16px;
+        overflow: auto;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: #f7f7f7;
+        border-radius: 3px;
+      }
+      .markdown-body pre code,
+      .markdown-body pre tt {
+        display: inline;
+        max-width: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        line-height: inherit;
+        word-wrap: normal;
+        background-color: transparent;
+        border: 0;
+      }
+      .markdown-body pre code:after,
+      .markdown-body pre code:before,
+      .markdown-body pre tt:after,
+      .markdown-body pre tt:before {
+        content: normal;
+      }
+      .markdown-body .csv-data td,
+      .markdown-body .csv-data th {
+        padding: 5px;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 1;
+        text-align: left;
+        white-space: nowrap;
+      }
+      .markdown-body .csv-data .blob-line-num {
+        padding: 10px 8px 9px;
+        text-align: right;
+        background: #fff;
+        border: 0;
+      }
+      .markdown-body .csv-data tr {
+        border-top: 0;
+      }
+      .markdown-body .csv-data th {
+        font-weight: 700;
+        background: #f8f8f8;
+        border-top: 0;
+      }
+      .news .alert .markdown-body blockquote {
+        padding: 0 0 0 40px;
+        border: 0 none;
+      }
+      .activity-tab .news .alert .commits,
+      .activity-tab .news .markdown-body blockquote {
+        padding-left: 0;
+      }
+      .task-list-item {
+        list-style-type: none;
+      }
+      .task-list-item label {
+        font-weight: 400;
+      }
+      .task-list-item.enabled label {
+        cursor: pointer;
+      }
+      .task-list-item + .task-list-item {
+        margin-top: 3px;
+      }
+      .task-list-item-checkbox {
+        float: left;
+        margin: 0.31em 0 0.2em -1.3em !important;
+        vertical-align: middle;
+        cursor: default !important;
+      }
+      .markdown-body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        max-width: 758px;
+        overflow: visible !important;
+        position: relative;
+      }
+      .markdown-body .emoji {
+        vertical-align: top;
+      }
+      .markdown-body pre {
+        border: inherit !important;
+      }
+      .markdown-body code {
+        color: inherit !important;
+      }
+      .markdown-body pre code .wrapper {
+        display: -moz-inline-flex;
+        display: -ms-inline-flex;
+        display: -o-inline-flex;
+        display: inline-flex;
+      }
+      .markdown-body pre code .gutter {
+        float: left;
+        overflow: hidden;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .markdown-body pre code .gutter.linenumber {
+        text-align: right;
+        position: relative;
+        display: inline-block;
+        cursor: default;
+        z-index: 4;
+        padding: 0 8px 0 0;
+        min-width: 20px;
+        box-sizing: content-box;
+        color: #afafaf !important;
+        border-right: 3px solid #6ce26c !important;
+      }
+      .markdown-body pre code .gutter.linenumber > span:before {
+        content: attr(data-linenumber);
+      }
+      .markdown-body pre code .code {
+        float: left;
+        margin: 0 0 0 16px;
+      }
+      .markdown-body .gist .line-numbers {
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+      }
+      .markdown-body .gist .line-data {
+        border: none;
+      }
+      .markdown-body .gist table {
+        border-spacing: 0;
+        border-collapse: inherit !important;
+      }
+      .markdown-body code[data-gist-id] {
+        background: none;
+        padding: 0;
+      }
+      .markdown-body code[data-gist-id]:after,
+      .markdown-body code[data-gist-id]:before {
+        content: "";
+      }
+      .markdown-body code[data-gist-id] .blob-num {
+        border: unset;
+      }
+      .markdown-body code[data-gist-id] table {
+        overflow: unset;
+        margin-bottom: unset;
+      }
+      .markdown-body code[data-gist-id] table tr {
+        background: unset;
+      }
+      .markdown-body[dir="rtl"] pre {
+        direction: ltr;
+      }
+      .markdown-body[dir="rtl"] code {
+        direction: ltr;
+        unicode-bidi: embed;
+      }
+      .markdown-body .alert > p {
+        margin-bottom: 0;
+      }
+      .markdown-body pre.abc,
+      .markdown-body pre.flow-chart,
+      .markdown-body pre.graphviz,
+      .markdown-body pre.mermaid,
+      .markdown-body pre.sequence-diagram,
+      .markdown-body pre.vega {
+        text-align: center;
+        background-color: inherit;
+        border-radius: 0;
+        white-space: inherit;
+        overflow: visible;
+      }
+      .markdown-body pre.abc > code,
+      .markdown-body pre.flow-chart > code,
+      .markdown-body pre.graphviz > code,
+      .markdown-body pre.mermaid > code,
+      .markdown-body pre.sequence-diagram > code,
+      .markdown-body pre.vega > code {
+        text-align: left;
+      }
+      .markdown-body pre.abc > svg,
+      .markdown-body pre.flow-chart > svg,
+      .markdown-body pre.graphviz > svg,
+      .markdown-body pre.mermaid > svg,
+      .markdown-body pre.sequence-diagram > svg,
+      .markdown-body pre.vega > svg {
+        max-width: 100%;
+        height: 100%;
+      }
+      .markdown-body pre > code.wrap {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+      }
+      .markdown-body .alert > p,
+      .markdown-body .alert > ul {
+        margin-bottom: 0;
+      }
+      .markdown-body summary {
+        display: list-item;
+      }
+      .markdown-body summary:focus {
+        outline: none;
+      }
+      .markdown-body details summary {
+        cursor: pointer;
+      }
+      .markdown-body details:not([open]) > :not(summary) {
+        display: none;
+      }
+      .markdown-body figure {
+        margin: 1em 40px;
+      }
+      .markdown-body .mark,
+      .markdown-body mark {
+        background-color: #fff1a7;
+      }
+      .vimeo,
+      .youtube {
+        cursor: pointer;
+        display: table;
+        text-align: center;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #000;
+        overflow: hidden;
+      }
+      .vimeo,
+      .youtube {
+        position: relative;
+        width: 100%;
+      }
+      .youtube {
+        padding-bottom: 56.25%;
+      }
+      .vimeo img {
+        width: 100%;
+        object-fit: contain;
+        z-index: 0;
+      }
+      .youtube img {
+        object-fit: cover;
+        z-index: 0;
+      }
+      .vimeo iframe,
+      .youtube iframe,
+      .youtube img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .vimeo iframe,
+      .youtube iframe {
+        vertical-align: middle;
+        z-index: 1;
+      }
+      .vimeo .icon,
+      .youtube .icon {
+        position: absolute;
+        height: auto;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        opacity: 0.3;
+        transition: opacity 0.2s;
+        z-index: 0;
+      }
+      .vimeo:hover .icon,
+      .youtube:hover .icon {
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .slideshare .inner,
+      .speakerdeck .inner {
+        position: relative;
+        width: 100%;
+      }
+      .slideshare .inner iframe,
+      .speakerdeck .inner iframe {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .figma {
+        display: table;
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+      }
+      .figma iframe {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #eee;
+      }
+      .MJX_Assistive_MathML {
+        display: none;
+      }
+      #MathJax_Message {
+        z-index: 1000 !important;
+      }
+      .ui-infobar {
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+        margin: 25px auto -25px;
+        color: #777;
+      }
+      .toc .invisable-node {
+        list-style-type: none;
+      }
+      .ui-toc {
+        position: fixed;
+        bottom: 20px;
+        z-index: 998;
+      }
+      .ui-toc.both-mode {
+        margin-left: 8px;
+      }
+      .ui-toc.both-mode .ui-toc-label {
+        height: 40px;
+        padding: 10px 4px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .ui-toc-label {
+        background-color: #e6e6e6;
+        border: none;
+        color: #868686;
+        transition: opacity 0.2s;
+      }
+      .ui-toc .open .ui-toc-label {
+        opacity: 1;
+        color: #fff;
+        transition: opacity 0.2s;
+      }
+      .ui-toc-label:focus {
+        opacity: 0.3;
+        background-color: #ccc;
+        color: #000;
+      }
+      .ui-toc-label:hover {
+        opacity: 1;
+        background-color: #ccc;
+        transition: opacity 0.2s;
+      }
+      .ui-toc-dropdown {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 45vw;
+        width: 25vw;
+        max-height: 70vh;
+        overflow: auto;
+        text-align: inherit;
+      }
+      .ui-toc-dropdown > .toc {
+        max-height: calc(70vh - 100px);
+        overflow: auto;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav {
+        padding-right: 0;
+        letter-spacing: 0.0029em;
+      }
+      .ui-toc-dropdown a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre;
+      }
+      .ui-toc-dropdown .nav > li > a {
+        display: block;
+        padding: 4px 20px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #767676;
+      }
+      .ui-toc-dropdown .nav > li:first-child:last-child > ul,
+      .ui-toc-dropdown .toc.expand ul {
+        display: block;
+      }
+      .ui-toc-dropdown .nav > li > a:focus,
+      .ui-toc-dropdown .nav > li > a:hover {
+        padding-left: 19px;
+        color: #000;
+        text-decoration: none;
+        background-color: transparent;
+        border-left: 1px solid #000;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav > li > a:focus,
+      .ui-toc-dropdown[dir="rtl"] .nav > li > a:hover {
+        padding-right: 19px;
+        border-left: none;
+        border-right: 1px solid #000;
+      }
+      .ui-toc-dropdown .nav > .active:focus > a,
+      .ui-toc-dropdown .nav > .active:hover > a,
+      .ui-toc-dropdown .nav > .active > a {
+        padding-left: 18px;
+        font-weight: 700;
+        color: #000;
+        background-color: transparent;
+        border-left: 2px solid #000;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav > .active:focus > a,
+      .ui-toc-dropdown[dir="rtl"] .nav > .active:hover > a,
+      .ui-toc-dropdown[dir="rtl"] .nav > .active > a {
+        padding-right: 18px;
+        border-left: none;
+        border-right: 2px solid #000;
+      }
+      .ui-toc-dropdown .nav .nav {
+        display: none;
+        padding-bottom: 10px;
+      }
+      .ui-toc-dropdown .nav > .active > ul {
+        display: block;
+      }
+      .ui-toc-dropdown .nav .nav > li > a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 30px;
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > li > a {
+        padding-right: 30px;
+      }
+      .ui-toc-dropdown .nav .nav > li > ul > li > a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 40px;
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > li > ul > li > a {
+        padding-right: 40px;
+      }
+      .ui-toc-dropdown .nav .nav > li > a:focus,
+      .ui-toc-dropdown .nav .nav > li > a:hover {
+        padding-left: 29px;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > li > a:focus,
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > li > a:hover {
+        padding-right: 29px;
+      }
+      .ui-toc-dropdown .nav .nav > li > ul > li > a:focus,
+      .ui-toc-dropdown .nav .nav > li > ul > li > a:hover {
+        padding-left: 39px;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > li > ul > li > a:focus,
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > li > ul > li > a:hover {
+        padding-right: 39px;
+      }
+      .ui-toc-dropdown .nav .nav > .active:focus > a,
+      .ui-toc-dropdown .nav .nav > .active:hover > a,
+      .ui-toc-dropdown .nav .nav > .active > a {
+        padding-left: 28px;
+        font-weight: 500;
+      }
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > .active:focus > a,
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > .active:hover > a,
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > .active > a {
+        padding-right: 28px;
+      }
+      .ui-toc-dropdown .nav .nav > .active > .nav > .active:focus > a,
+      .ui-toc-dropdown .nav .nav > .active > .nav > .active:hover > a,
+      .ui-toc-dropdown .nav .nav > .active > .nav > .active > a {
+        padding-left: 38px;
+        font-weight: 500;
+      }
+      .ui-toc-dropdown[dir="rtl"]
+        .nav
+        .nav
+        > .active
+        > .nav
+        > .active:focus
+        > a,
+      .ui-toc-dropdown[dir="rtl"]
+        .nav
+        .nav
+        > .active
+        > .nav
+        > .active:hover
+        > a,
+      .ui-toc-dropdown[dir="rtl"] .nav .nav > .active > .nav > .active > a {
+        padding-right: 38px;
+      }
+      .markdown-body {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+          Helvetica, Roboto, Arial, sans-serif;
+      }
+      html[lang^="ja"] .markdown-body {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+          Helvetica, Roboto, Arial, Hiragino Kaku Gothic Pro,
+          ヒラギノ角ゴ Pro W3, Osaka, Meiryo, メイリオ, MS Gothic, ＭＳ\ゴシック,
+          sans-serif;
+      }
+      html[lang="zh-tw"] .markdown-body {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+          Helvetica, Roboto, Arial, PingFang TC, Microsoft JhengHei, 微軟正黑,
+          sans-serif;
+      }
+      html[lang="zh-cn"] .markdown-body {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+          Helvetica, Roboto, Arial, PingFang SC, Microsoft YaHei, 微软雅黑,
+          sans-serif;
+      }
+      html .markdown-body[lang^="ja"] {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+          Helvetica, Roboto, Arial, Hiragino Kaku Gothic Pro,
+          ヒラギノ角ゴ Pro W3, Osaka, Meiryo, メイリオ, MS Gothic, ＭＳ\ゴシック,
+          sans-serif;
+      }
+      html .markdown-body[lang="zh-tw"] {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+          Helvetica, Roboto, Arial, PingFang TC, Microsoft JhengHei, 微軟正黑,
+          sans-serif;
+      }
+      html .markdown-body[lang="zh-cn"] {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue,
+          Helvetica, Roboto, Arial, PingFang SC, Microsoft YaHei, 微软雅黑,
+          sans-serif;
+      }
+      html[lang^="ja"] .ui-toc-dropdown {
+        font-family: Source Sans Pro, Helvetica, Arial, Meiryo UI, MS PGothic,
+          ＭＳ\Ｐゴシック, sans-serif;
+      }
+      html[lang="zh-tw"] .ui-toc-dropdown {
+        font-family: Source Sans Pro, Helvetica, Arial, Microsoft JhengHei UI,
+          微軟正黑UI, sans-serif;
+      }
+      html[lang="zh-cn"] .ui-toc-dropdown {
+        font-family: Source Sans Pro, Helvetica, Arial, Microsoft YaHei UI,
+          微软雅黑UI, sans-serif;
+      }
+      html .ui-toc-dropdown[lang^="ja"] {
+        font-family: Source Sans Pro, Helvetica, Arial, Meiryo UI, MS PGothic,
+          ＭＳ\Ｐゴシック, sans-serif;
+      }
+      html .ui-toc-dropdown[lang="zh-tw"] {
+        font-family: Source Sans Pro, Helvetica, Arial, Microsoft JhengHei UI,
+          微軟正黑UI, sans-serif;
+      }
+      html .ui-toc-dropdown[lang="zh-cn"] {
+        font-family: Source Sans Pro, Helvetica, Arial, Microsoft YaHei UI,
+          微软雅黑UI, sans-serif;
+      }
+      .ui-affix-toc {
+        position: fixed;
+        top: 0;
+        max-width: 15vw;
+        max-height: 70vh;
+        overflow: auto;
+      }
+      .back-to-top,
+      .expand-toggle,
+      .go-to-bottom {
+        display: block;
+        padding: 4px 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #999;
+      }
+      .back-to-top:focus,
+      .back-to-top:hover,
+      .expand-toggle:focus,
+      .expand-toggle:hover,
+      .go-to-bottom:focus,
+      .go-to-bottom:hover {
+        color: #563d7c;
+        text-decoration: none;
+      }
+      .back-to-top,
+      .go-to-bottom {
+        margin-top: 0;
+      }
+      .ui-user-icon {
+        width: 20px;
+        height: 20px;
+        display: block;
+        border-radius: 50%;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-right: 5px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .ui-user-icon.small {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0.2em;
+      }
+      .ui-infobar > small > span {
+        line-height: 22px;
+      }
+      .ui-infobar > small .dropdown {
+        display: inline-block;
+      }
+      .ui-infobar > small .dropdown a:focus,
+      .ui-infobar > small .dropdown a:hover {
+        text-decoration: none;
+      }
+      .ui-more-info {
+        color: #888;
+        cursor: pointer;
+        vertical-align: middle;
+      }
+      .ui-more-info .fa {
+        font-size: 16px;
+      }
+      .ui-connectedGithub,
+      .ui-published-note {
+        color: #888;
+      }
+      .ui-connectedGithub {
+        line-height: 23px;
+        white-space: nowrap;
+      }
+      .ui-connectedGithub a.file-path {
+        color: #888;
+        text-decoration: none;
+        padding-left: 22px;
+      }
+      .ui-connectedGithub a.file-path:active,
+      .ui-connectedGithub a.file-path:hover {
+        color: #888;
+        text-decoration: underline;
+      }
+      .ui-connectedGithub .fa {
+        font-size: 20px;
+      }
+      .ui-published-note .fa {
+        font-size: 20px;
+        vertical-align: top;
+      }
+      .unselectable {
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      .selectable {
+        -webkit-user-select: text;
+        -o-user-select: text;
+        user-select: text;
+      }
+      @media print {
+        blockquote,
+        div,
+        img,
+        pre,
+        table {
+          page-break-inside: avoid !important;
+        }
+        a[href]:after {
+          font-size: 12px !important;
+        }
+      }
+      .markdown-body.slides {
+        position: relative;
+        z-index: 1;
+        color: #222;
+      }
+      .markdown-body.slides:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: currentColor;
+        box-shadow: 0 0 0 50vw;
+      }
+      .markdown-body.slides section[data-markdown] {
+        position: relative;
+        margin-bottom: 1.5em;
+        background-color: #fff;
+        text-align: center;
+      }
+      .markdown-body.slides section[data-markdown] code {
+        text-align: left;
+      }
+      .markdown-body.slides section[data-markdown]:before {
+        content: "";
+        display: block;
+        padding-bottom: 56.23%;
+      }
+      .markdown-body.slides section[data-markdown] > div:first-child {
+        position: absolute;
+        top: 50%;
+        left: 1em;
+        right: 1em;
+        transform: translateY(-50%);
+        max-height: 100%;
+        overflow: hidden;
+      }
+      .markdown-body.slides section[data-markdown] > ul {
+        display: inline-block;
+      }
+      .markdown-body.slides > section > section + section:after {
+        content: "";
+        position: absolute;
+        top: -1.5em;
+        right: 1em;
+        height: 1.5em;
+        border: 3px solid #777;
+      }
+      .site-ui-font {
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+      }
+      html[lang^="ja"] .site-ui-font {
+        font-family: Source Sans Pro, Helvetica, Arial, Hiragino Kaku Gothic Pro,
+          ヒラギノ角ゴ Pro W3, Osaka, Meiryo, メイリオ, MS Gothic, ＭＳ\ゴシック,
+          sans-serif;
+      }
+      html[lang="zh-tw"] .site-ui-font {
+        font-family: Source Sans Pro, Helvetica, Arial, PingFang TC,
+          Microsoft JhengHei, 微軟正黑, sans-serif;
+      }
+      html[lang="zh-cn"] .site-ui-font {
+        font-family: Source Sans Pro, Helvetica, Arial, PingFang SC,
+          Microsoft YaHei, 微软雅黑, sans-serif;
+      }
+      body {
+        font-smoothing: subpixel-antialiased !important;
+        -webkit-font-smoothing: subpixel-antialiased !important;
+        -moz-osx-font-smoothing: auto !important;
+        text-shadow: 0 0 1em transparent, 1px 1px 1.2px rgba(0, 0, 0, 0.004);
+        -webkit-overflow-scrolling: touch;
+        letter-spacing: 0.025em;
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+      }
+      html[lang^="ja"] body {
+        font-family: Source Sans Pro, Helvetica, Arial, Hiragino Kaku Gothic Pro,
+          ヒラギノ角ゴ Pro W3, Osaka, Meiryo, メイリオ, MS Gothic, ＭＳ\ゴシック,
+          sans-serif;
+      }
+      html[lang="zh-tw"] body {
+        font-family: Source Sans Pro, Helvetica, Arial, PingFang TC,
+          Microsoft JhengHei, 微軟正黑, sans-serif;
+      }
+      html[lang="zh-cn"] body {
+        font-family: Source Sans Pro, Helvetica, Arial, PingFang SC,
+          Microsoft YaHei, 微软雅黑, sans-serif;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        -webkit-text-decoration: underline dotted;
+        text-decoration: underline dotted;
+      }
+      abbr[data-original-title],
+      abbr[title] {
+        cursor: help;
+      }
+      body.modal-open {
+        overflow-y: auto;
+        padding-right: 0 !important;
+      }
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
+        integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g="
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"
+        integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE="
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"
+        integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo="
+        crossorigin="anonymous"
+      ></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div
+      id="doc"
+      class="markdown-body container-fluid comment-inner comment-enabled"
+      data-hard-breaks="true"
+    >
+      <h1 class="raw">
+        <span
+          >El riesgo en los procesos de auditoría de sistemas y la
+          automatización de la auditoría</span
+        >
+      </h1>
+      <blockquote>
+        <p>
+          <small
+            ><i class="fa fa-user"></i> España, E. y Lameda, M.
+            <i class="fa fa-clock-o"></i> Oct 08, 2021
+          </small>
+        </p>
+      </blockquote>
+      <p>
+        <img
+          src="banner.jpg"
+          alt="Uploading file..._vfg9sh3so"
+          loading="lazy"
+        />
+      </p>
+      <p><span>aqui va la imagen</span></p>
+      <p>
+        <span
+          >Todos los procesos empresariales impulsados por la tecnología están
+          expuestos a amenazas a la seguridad y la privacidad. Las tecnologías
+          sofisticadas son capaces de combatir los ataques a la ciberseguridad,
+          pero no son suficientes: las organizaciones deben asegurarse de que
+          los procesos empresariales, las políticas y el comportamiento de la
+          fuerza de trabajo también minimicen o mitiguen estos riesgos.</span
+        >
+      </p>
+      <h2 class="raw"><span>Tabla de Contenidos</span></h2>
+      <p><span class="toc"></span></p>
+      <h2 class="raw"><span>El Riesgo Informático.</span></h2>
+      <p>
+        <span>El riesgo informático se define como una </span
+        ><strong
+          ><span
+            >dificultad que interviene en el cumplimiento de una meta o así
+            mismo una amenaza a la pérdida de documentos o información</span
+          ></strong
+        ><span
+          >. Este riesgo puede estar clasificado en ganancia o pérdida. Los
+          medios que este riesgo informático presenta son:</span
+        >
+      </p>
+      <ul>
+        <li>
+          <strong><span>Probabilidad</span></strong
+          ><span
+            >: Mirar o plantear que probabilidades hay de que se presente
+            amenazas frente a un trabajo que estemos realizando.</span
+          >
+        </li>
+        <li>
+          <strong><span>Amenazas</span></strong
+          ><span
+            >: Son acciones que se presentan en una empresa ocasionando
+            resultados negativos y pueden ser de carácter físico o lógico.</span
+          >
+        </li>
+        <li>
+          <strong><span>Vulnerabilidades</span></strong
+          ><span
+            >: Es cuando la amenaza está presente pero no se hace visible o
+            real.</span
+          >
+        </li>
+        <li>
+          <strong><span>Activos</span></strong
+          ><span
+            >: Son los datos relacionados con el sistema de información.</span
+          >
+        </li>
+        <li>
+          <strong><span>Impacto</span></strong
+          ><span
+            >: Los resultados de estas amenazas siempre resultan
+            negativas.</span
+          >
+        </li>
+      </ul>
+      <h2 class="raw">
+        <span
+          >La Evaluación del Riesgo y las herramientas para evaluar el
+          riesgo.</span
+        >
+      </h2>
+      <p>
+        <span
+          >La evaluación del riesgo se hace de manera cualitativa** generando
+          una comparación en la cual se presenta el análisis de la probabilidad
+          de ocurrencia del riesgo versus el impacto del mismo, obteniendo al
+          final la matriz denominada “Matriz de Calificación, Evaluación y
+          respuesta a los Riesgos”, con la cual la guía presenta la forma de
+          calificar los riesgos con los niveles de impacto y probabilidad
+          establecidos anteriormente, así como las zonas de riesgo presentando
+          la posibles formas de tratamiento que se le puede dar a ese riesgo,
+          tal como se muestra en la siguiente imagen:</span
+        ><br />
+        <img
+          src="https://i.imgur.com/t11rgcN.png"
+          alt=""
+          loading="lazy"
+        /><br />
+        <em
+          ><span
+            >Ilustración 1 “Matriz de Calificación, Evaluación y respuesta a los
+            Riesgos”</span
+          ><br />
+          <span>Fuente: Guía de Riesgos DAFP</span></em
+        >
+      </p>
+      <h2 class="raw">
+        <span
+          >¿Cómo se puede identificar y evaluar los riesgos tecnológicos?</span
+        >
+      </h2>
+      <p>
+        <span
+          >Una vez que tenemos determinado un valor de riesgo para cada amenaza
+          que puede afectar o comprometer el estado de seguridad de un activo de
+          información se estima de acuerdo a confidencialidad, integridad y
+          disponibilidad de la información y luego se designa qué niveles de
+          riesgos son asumibles y con cuales deberemos tomar medidas, para esto
+          se tiene la siguiente tabla:</span
+        >
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th><span>Calificación del riesgo</span></th>
+            <th><span>Descripción</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>Muy Alto (7-9)</span></td>
+            <td>
+              <span
+                >El riesgo es totalmente inaceptable. Se deben tomar medidas
+                inmediatas para reducir los riesgos y mitigar los riesgos</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><span>Alto (5-6)</span></td>
+            <td>
+              <span
+                >El riesgo es totalmente inaceptable. Las medidas inmediatas
+                para reducir los riesgos y los riesgos de mitigación deberían
+                implementarse lo antes posible</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><span>Medio (3-4)</span></td>
+            <td>
+              <span
+                >El riesgo puede ser aceptable en el corto plazo. Los planes
+                para reducir los riesgos y mitigar los peligros debebrían
+                incluirse en los planes y presupuestos futuros.</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><span>Bajo (0-2)</span></td>
+            <td>
+              <span
+                >El riesgo es totalmente inaceptable. Se deben tomar
+                medidasinmediatas para reducir los riesgos y mitigar los
+                riesgos</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <span
+          >Con base en los hallazgos del análisis de riesgos, el siguiente paso
+          en el proceso es identificar las medidas disminuyan los diversos
+          niveles de riesgo. Estos se denominan dentro de la norma ISO 27001
+          como controles de riesgos para la seguridad de la información.</span
+        >
+      </p>
+      <h2 class="raw">
+        <span>El proceso de la Auditoría de Sistemas basado en Riesgos</span>
+      </h2>
+      <p>
+        <span
+          >La auditoría basada en riesgos es una forma de conducir las
+          auditorías internas y externas de diferentes tipos, a partir de la
+          planeación y desarrollo en los riesgos críticos, es decir, los que
+          pudieran causar mayor impacto negativo en la obtención de objetivos de
+          la organización (estratégicos, operacionales, de información y de
+          cumplimiento).</span
+        ><br />
+        <span
+          >El modelo de auditoría basado en riesgos, agrega valor a una
+          organización de diferentes maneras. A continuación, se presentan
+          algunas de ellas:</span
+        >
+      </p>
+      <ul>
+        <li>
+          <strong
+            ><span
+              >Enfoque centrado en el negocio que ayuda a la organización a
+              lograr sus objetivos</span
+            ></strong
+          ><span
+            >: La auditoría basada en riesgos une los diferentes elementos de la
+            auditoría interna: objetivos, procesos, riesgos, controles, pruebas
+            e informes.</span
+          >
+        </li>
+        <li>
+          <strong
+            ><span
+              >Enfoque de auditoría inclusivo que facilita la gestión de la
+              gerencia</span
+            ></strong
+          ><span
+            >: Como resultado de que la organización está estrechamente
+            involucrada en el proceso de riesgo y auditoría a través de talleres
+            de riesgo, autoevaluaciones de riesgo y control, actividades de
+            aseguramiento, etc., la administración puede relacionarse claramente
+            con los beneficios del resultado de la auditoría.</span
+          >
+        </li>
+        <li>
+          <strong
+            ><span
+              >Nivel óptimo de aseguramiento que respalda el logro de los
+              objetivos del negocio</span
+            ></strong
+          ><span
+            >: La auditoría basada en riesgos garantiza que los riesgos más
+            importantes para la organización (vinculados a los objetivos clave)
+            son auditados y que la administración asume la responsabilidad de la
+            mitigación y el monitoreo de estas áreas de alto riesgo de forma
+            continua.</span
+          >
+        </li>
+        <li>
+          <strong
+            ><span
+              >Mejor priorización de hallazgos y recomendaciones</span
+            ></strong
+          ><span
+            >: Los hallazgos y las recomendaciones pueden clasificarse para
+            proporcionar el mayor valor agregado en términos de los riesgos
+            mitigados relacionados con el logro de los objetivos
+            comerciales.</span
+          >
+        </li>
+        <li>
+          <strong><span>Mejora de la mitigación de riesgos</span></strong
+          ><span
+            >: La auditoría basada en riesgos resalta los riesgos clave que
+            están controlados de manera inadecuada o sobre controlada, mejorando
+            así la mitigación de riesgos y la eficiencia general del
+            negocio.</span
+          >
+        </li>
+        <li>
+          <strong
+            ><span>Uso más efectivo de los recursos de auditoría</span></strong
+          ><span
+            >: Con la auditoría basada en el riesgo, el plan de auditoría está
+            determinado por la naturaleza y la cantidad de riesgos sobre los
+            cuales el comité de auditoría requiere garantías. Se diferencia del
+            enfoque alternativo, por el cual los recursos disponibles determinan
+            las auditorías que pueden realizarse. También garantiza que los
+            recursos se destinen a auditar los riesgos más significativos</span
+          >
+        </li>
+      </ul>
+      <p>
+        <span
+          >Es importante tener en cuenta que, para que una auditoría agregue
+          valor y mejore las operaciones de la compañía, es importante que el
+          auditor comprenda los objetivos comerciales de la organización y los
+          riesgos que amenazan o deben tomarse (oportunidades) para alcanzar
+          estos objetivos. Saber dónde se encuentran los mayores riesgos, hace
+          que sea más fácil para el auditor interno enfocar su esfuerzo de
+          auditoría en las áreas donde se puede agregar el mayor valor.</span
+        >
+      </p>
+      <h2 class="raw">
+        <span
+          >Técnicas y Herramientas de Auditoría Asistidas por Computador</span
+        >
+      </h2>
+      <p>
+        <span
+          >La norma SAP 1009 (Statement of Auditing Practice) denominada
+          Técnicas de Auditoría Asistidas por Computadora (TAAC’s), plantea el
+          uso de dichas técnicas en la auditoría de sistemas. Estas son un
+          conjunto de técnicas y herramientas utilizados en el desarrollo de las
+          auditorías informáticas con el fin de mejorar la eficiencia, alcance y
+          confiabilidad de los análisis efectuados por el auditor, a los
+          sistemas y los datos de la entidad auditada. Incluyen métodos y
+          procedimientos empleados para efectuar su trabajo, que pueden ser
+          administrativos, analíticos, informáticos, entre otros; los cuales,
+          son de suma importancia para el auditor informático cuando este
+          realiza una auditoría, sin dejar a un lado las técnicas tradicionales
+          como son la inspección, observación, confirmación, revisión,
+          etc…</span
+        ><br />
+        <span
+          >Las TAAC’s incluyen distintos tipos de herramientas y de técnicas,
+          las que más se utilizan son los software de auditoría generalizado,
+          software utilitario, los datos de prueba y sistemas expertos de
+          auditoría. Se pueden utilizar para realizar varios procedimientos de
+          auditoría incluyendo:</span
+        >
+      </p>
+      <ul>
+        <li>
+          <span
+            >Pruebas de detalles de transacciones y balances (Recálculos de
+            intereses, extracción de ventas por encima de cierto valor,
+            etc.)</span
+          >
+        </li>
+        <li>
+          <span
+            >Procedimientos analíticos: identificación de partidas o
+            fluctuaciones significativas.</span
+          >
+        </li>
+        <li>
+          <span
+            >Pruebas de controles generales, tales como configuraciones en
+            sistemas operativos y diferentes aplicativos, procedimientos de
+            acceso al sistema (usuarios y perfiles definidos), comparación de
+            códigos y versiones.</span
+          >
+        </li>
+        <li><span>Programas de muestreo para extraer datos.</span></li>
+        <li>
+          <span
+            >Pruebas de cumplimiento de los controles informáticos sobre
+            aplicaciones (por ejemplo, el uso de verificaciones de datos para
+            comprobar el funcionamiento de un procedimiento o prueba previamente
+            programados)</span
+          >
+        </li>
+      </ul>
+      <blockquote>
+        <p>
+          <span>Algunos softwares son: </span
+          ><code>Easy2Analyse (QDAC.net)</code><span> </span
+          ><code>ESKORT Computer Audit (SESAM)</code><span> </span
+          ><code>InfoZoom</code><span> </span
+          ><code>Interactive Data Extraction and Analysis (IDEA)</code
+          ><span> </span><code>Cristal Reports</code>
+        </p>
+      </blockquote>
+      <h2 class="raw">
+        <span
+          >Proceso de Administración y monitoreo durante un proceso de Auditoría
+          Asistida por Computador</span
+        >
+      </h2>
+      <p>
+        <span
+          >El uso de las TAACs proporciona un medio para mejorar el grado de
+          análisis de la información, a fin de cubrir los objetivos de las
+          revisiones de auditoría, y reportar los hallazgos con relevancia en el
+          nivel de confiabilidad de los registros generados y mantenidos en
+          sistemas computacionales.</span
+        >
+      </p>
+      <p>
+        <span
+          >El objetivo del proceso administrativo es verificar, evaluar y
+          promover el cumplimiento y apego al correcto funcionamiento de las
+          fases o elementos del proceso y lo que incide en ellos. Es su objetivo
+          también evaluar la calidad de la administración en su conjunto.</span
+        >
+      </p>
+      <p>
+        <span
+          >La implementación del monitoreo consiste en la evaluación del control
+          interno de las operaciones para identificar riesgos, y con base en
+          estos, diseñar los procedimientos automatizados de auditoría, que
+          permitan formular propuestas para administrar estos riesgos y realizar
+          revisiones periódicas a estas operaciones, para vigilar su
+          cumplimiento tanto por la misma área como por auditoría interna. A
+          juicio del auditor en TI se seleccionan las herramientas que mejor se
+          adapten al tipo de sistema que se va a auditar.</span
+        >
+      </p>
+      <hr />
+      <h6 class="raw">
+        <span>Tags: </span><code>Auditoría de Sistemas</code><span> </span
+        ><code>Riesgos Informáticos</code><span> </span
+        ><code>Evaluación de riesgos</code><span> </span><code>TAACs</code
+        ><span> </span><code>Automatización de la auditoria</code>
+      </h6>
+      <blockquote>
+        <p>
+          <small
+            ><i class="fa fa-user"></i> España, E. y Lameda, M.
+            <i class="fa fa-clock-o"></i> Oct 08, 2021
+          </small>
+        </p>
+      </blockquote>
+      <div class="alert alert-info">
+        <p>
+          <strong><span>Te gustó este artículo?</span></strong
+          ><span> Deja un comentario</span>
+        </p>
+      </div>
+    </div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display: none">
+      <div class="pull-right dropdown">
+        <a
+          id="tocLabel"
+          class="ui-toc-label btn btn-default"
+          data-toggle="dropdown"
+          href="#"
+          role="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          title="Table of content"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
+        <ul
+          id="ui-toc"
+          class="ui-toc-dropdown dropdown-menu"
+          aria-labelledby="tocLabel"
+        >
+          <div class="toc">
+            <ul class="nav">
+              <li class="">
+                <a
+                  href="#El-riesgo-en-los-procesos-de-auditoría-de-sistemas-y-la-automatización-de-la-auditoría"
+                  title="El riesgo en los procesos de auditoría de sistemas y la automatización de la auditoría"
+                  >El riesgo en los procesos de auditoría de sistemas y la
+                  automatización de la auditoría</a
+                >
+                <ul class="nav">
+                  <li>
+                    <a href="#Tabla-de-Contenidos" title="Tabla de Contenidos"
+                      >Tabla de Contenidos</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#El-Riesgo-Informático"
+                      title="El Riesgo Informático."
+                      >El Riesgo Informático.</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#La-Evaluación-del-Riesgo-y-las-herramientas-para-evaluar-el-riesgo"
+                      title="La Evaluación del Riesgo y las herramientas para evaluar el riesgo."
+                      >La Evaluación del Riesgo y las herramientas para evaluar
+                      el riesgo.</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#¿Cómo-se-puede-identificar-y-evaluar-los-riesgos-tecnológicos"
+                      title="¿Cómo se puede identificar y evaluar los riesgos tecnológicos?"
+                      >¿Cómo se puede identificar y evaluar los riesgos
+                      tecnológicos?</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#El-proceso-de-la-Auditoría-de-Sistemas-basado-en-Riesgos"
+                      title="El proceso de la Auditoría de Sistemas basado en Riesgos"
+                      >El proceso de la Auditoría de Sistemas basado en
+                      Riesgos</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#Técnicas-y-Herramientas-de-Auditoría-Asistidas-por-Computador"
+                      title="Técnicas y Herramientas de Auditoría Asistidas por Computador"
+                      >Técnicas y Herramientas de Auditoría Asistidas por
+                      Computador</a
+                    >
+                  </li>
+                  <li class="">
+                    <a
+                      href="#Proceso-de-Administración-y-monitoreo-durante-un-proceso-de-Auditoría-Asistida-por-Computador"
+                      title="Proceso de Administración y monitoreo durante un proceso de Auditoría Asistida por Computador"
+                      >Proceso de Administración y monitoreo durante un proceso
+                      de Auditoría Asistida por Computador</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-menu">
+            <a class="expand-toggle" href="#">Expand all</a
+            ><a class="back-to-top" href="#">Back to top</a
+            ><a class="go-to-bottom" href="#">Go to bottom</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div
+      id="ui-toc-affix"
+      class="ui-affix-toc ui-toc-dropdown unselectable hidden-print"
+      data-spy="affix"
+      style="top: 17px; display: none"
+      null
+      null
+    >
+      <div class="toc">
+        <ul class="nav">
+          <li class="">
+            <a
+              href="#El-riesgo-en-los-procesos-de-auditoría-de-sistemas-y-la-automatización-de-la-auditoría"
+              title="El riesgo en los procesos de auditoría de sistemas y la automatización de la auditoría"
+              >El riesgo en los procesos de auditoría de sistemas y la
+              automatización de la auditoría</a
+            >
+            <ul class="nav">
+              <li>
+                <a href="#Tabla-de-Contenidos" title="Tabla de Contenidos"
+                  >Tabla de Contenidos</a
+                >
+              </li>
+              <li>
+                <a href="#El-Riesgo-Informático" title="El Riesgo Informático."
+                  >El Riesgo Informático.</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#La-Evaluación-del-Riesgo-y-las-herramientas-para-evaluar-el-riesgo"
+                  title="La Evaluación del Riesgo y las herramientas para evaluar el riesgo."
+                  >La Evaluación del Riesgo y las herramientas para evaluar el
+                  riesgo.</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#¿Cómo-se-puede-identificar-y-evaluar-los-riesgos-tecnológicos"
+                  title="¿Cómo se puede identificar y evaluar los riesgos tecnológicos?"
+                  >¿Cómo se puede identificar y evaluar los riesgos
+                  tecnológicos?</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#El-proceso-de-la-Auditoría-de-Sistemas-basado-en-Riesgos"
+                  title="El proceso de la Auditoría de Sistemas basado en Riesgos"
+                  >El proceso de la Auditoría de Sistemas basado en Riesgos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#Técnicas-y-Herramientas-de-Auditoría-Asistidas-por-Computador"
+                  title="Técnicas y Herramientas de Auditoría Asistidas por Computador"
+                  >Técnicas y Herramientas de Auditoría Asistidas por
+                  Computador</a
+                >
+              </li>
+              <li class="">
+                <a
+                  href="#Proceso-de-Administración-y-monitoreo-durante-un-proceso-de-Auditoría-Asistida-por-Computador"
+                  title="Proceso de Administración y monitoreo durante un proceso de Auditoría Asistida por Computador"
+                  >Proceso de Administración y monitoreo durante un proceso de
+                  Auditoría Asistida por Computador</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="toc-menu">
+        <a class="expand-toggle" href="#">Expand all</a
+        ><a class="back-to-top" href="#">Back to top</a
+        ><a class="go-to-bottom" href="#">Go to bottom</a>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js"
+      integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script>
+      var markdown = $(".markdown-body");
+      //smooth all hash trigger scrolling
+      function smoothHashScroll() {
+        var hashElements = $("a[href^='#']").toArray();
+        for (var i = 0; i < hashElements.length; i++) {
+          var element = hashElements[i];
+          var $element = $(element);
+          var hash = element.hash;
+          if (hash) {
+            $element.on("click", function (e) {
+              // store hash
+              var hash = this.hash;
+              if ($(hash).length <= 0) return;
+              // prevent default anchor click behavior
+              e.preventDefault();
+              // animate
+              $("body, html")
+                .stop(true, true)
+                .animate(
+                  {
+                    scrollTop: $(hash).offset().top,
+                  },
+                  100,
+                  "linear",
+                  function () {
+                    // when done, add hash to url
+                    // (default click behaviour)
+                    window.location.hash = hash;
+                  }
+                );
+            });
+          }
+        }
+      }
+
+      smoothHashScroll();
+      var toc = $(".ui-toc");
+      var tocAffix = $(".ui-affix-toc");
+      var tocDropdown = $(".ui-toc-dropdown");
+      //toc
+      tocDropdown.click(function (e) {
+        e.stopPropagation();
+      });
+
+      var enoughForAffixToc = true;
+
+      function generateScrollspy() {
+        $(document.body).scrollspy({
+          target: "",
+        });
+        $(document.body).scrollspy("refresh");
+        if (enoughForAffixToc) {
+          toc.hide();
+          tocAffix.show();
+        } else {
+          tocAffix.hide();
+          toc.show();
+        }
+        $(document.body).scroll();
+      }
+
+      function windowResize() {
+        //toc right
+        var paddingRight = parseFloat(markdown.css("padding-right"));
+        var right =
+          $(window).width() -
+          (markdown.offset().left + markdown.outerWidth() - paddingRight);
+        toc.css("right", right + "px");
+        //affix toc left
+        var newbool;
+        var rightMargin =
+          (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+        //for ipad or wider device
+        if (rightMargin >= 133) {
+          newbool = true;
+          var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+          var left =
+            markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+          tocAffix.css("left", left + "px");
+        } else {
+          newbool = false;
+        }
+        if (newbool != enoughForAffixToc) {
+          enoughForAffixToc = newbool;
+          generateScrollspy();
+        }
+      }
+      $(window).resize(function () {
+        windowResize();
+      });
+      $(document).ready(function () {
+        windowResize();
+        generateScrollspy();
+      });
+
+      //remove hash
+      function removeHash() {
+        window.location.hash = "";
+      }
+
+      var backtotop = $(".back-to-top");
+      var gotobottom = $(".go-to-bottom");
+
+      backtotop.click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (scrollToTop) scrollToTop();
+        removeHash();
+      });
+      gotobottom.click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (scrollToBottom) scrollToBottom();
+        removeHash();
+      });
+
+      var toggle = $(".expand-toggle");
+      var tocExpand = false;
+
+      checkExpandToggle();
+      toggle.click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        tocExpand = !tocExpand;
+        checkExpandToggle();
+      });
+
+      function checkExpandToggle() {
+        var toc = $(".ui-toc-dropdown .toc");
+        var toggle = $(".expand-toggle");
+        if (!tocExpand) {
+          toc.removeClass("expand");
+          toggle.text("Expand all");
+        } else {
+          toc.addClass("expand");
+          toggle.text("Collapse all");
+        }
+      }
+
+      function scrollToTop() {
+        $("body, html").stop(true, true).animate(
+          {
+            scrollTop: 0,
+          },
+          100,
+          "linear"
+        );
+      }
+
+      function scrollToBottom() {
+        $("body, html")
+          .stop(true, true)
+          .animate(
+            {
+              scrollTop: $(document.body)[0].scrollHeight,
+            },
+            100,
+            "linear"
+          );
+      }
+    </script>
+  </body>
+</html>
